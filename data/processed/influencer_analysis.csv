@@ -1,0 +1,6 @@
+username,followers,niche,avg_likes_last10,avg_comments_last10,posts_per_month,contact_public,data_type,engagement_rate
+demo_tech_03,12000,Tech,600,30,15,False,synthetic,5.25
+demo_lifestyle_04,8000,Lifestyle,400,20,10,False,synthetic,5.25
+demo_beauty_01,25000,Beauty,1200,80,12,False,synthetic,5.12
+demo_travel_05,50000,Travel,1500,100,6,False,synthetic,3.2
+demo_fashion_02,40000,Fashion,1000,50,8,False,synthetic,2.62

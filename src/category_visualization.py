@@ -10,12 +10,12 @@ from pathlib import Path
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 
 # Load feature-engineered data
-input_file = PROJECT_DIR / "data" / "processed" / "influencers_features.csv"
+input_file = PROJECT_DIR / "data" / "processed" / "influencers_under_1m.csv"
 
 df = pd.read_csv(input_file)
 
 # Count influencers in each category
-category_counts = df["follower_category"].value_counts()
+category_counts = df["category"].fillna("Unknown").value_counts()
 
 # Create a pie chart
 plt.figure(figsize=(8, 8))
@@ -39,3 +39,4 @@ plt.close()
 print("Category chart saved successfully!")
 print(category_counts)
 print("Saved to:", output_file)
+

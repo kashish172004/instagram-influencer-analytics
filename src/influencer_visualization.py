@@ -10,19 +10,18 @@ from pathlib import Path
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 
 # Load the feature-engineered dataset
-input_file = PROJECT_DIR / "data" / "processed" / "influencers_features.csv"
+input_file = PROJECT_DIR / "data" / "processed" / "influencers_under_1m.csv"
 
 # Read the dataset
 df = pd.read_csv(input_file)
-
-# Count influencers in each country
-top_countries = df["country"].value_counts().head(10)
+# Count influencers in each content category
+category_counts = df["category"].fillna("Unknown").value_counts()
+top_countries = df["country"].fillna("Unknown").value_counts().head(10)
 
 # Create the chart
 plt.figure(figsize=(10, 6))
 top_countries.plot(kind="bar")
 
-# Add chart labels
 plt.title("Top 10 Countries by Influencer Count")
 plt.xlabel("Country")
 plt.ylabel("Number of Influencers")
